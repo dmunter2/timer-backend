@@ -1,3 +1,2 @@
-# assembly-line
-Assembly Line
-init
+# Timer Backend
+This backend was written using Node.js, knex, and express
