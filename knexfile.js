@@ -3,10 +3,13 @@
 module.exports = {
 
   development: {
-    client: 'sqlite3',
+    client: 'pg',
     useNullAsDefault: true,
     connection: {
-      filename: './data/migrations'
+      host: '127.0.0.1:50775',
+      user: 'postgres',
+      password: '48932',
+      database: 'timer'
     },
     pool: {
       afterCreate: (conn, done) => {
@@ -24,7 +27,7 @@ module.exports = {
   testing: {
     client: 'sqlite3',
     connection: {
-      filename: './data/test.db3',
+      filename: './data'
     },
     useNullAsDefault: true,
     migrations: {
@@ -39,7 +42,7 @@ module.exports = {
 
   production: {
     client: 'pg',
-    connection: process.env.DATABASE_URL,
+    connection: process.env.HEROKU_POSTGRESQL_YELLOW_URL,
     migrations: {
       tableName: './data/migrations'
     },
