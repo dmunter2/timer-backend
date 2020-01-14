@@ -3,13 +3,10 @@
 module.exports = {
 
   development: {
-    client: 'pg',
+    client: 'sqlite3',
     useNullAsDefault: true,
     connection: {
-      host: '127.0.0.1:50775',
-      user: 'postgres',
-      password: '48932',
-      database: 'timer'
+      filename: '.data/timer.db3'
     },
     pool: {
       afterCreate: (conn, done) => {
@@ -27,7 +24,7 @@ module.exports = {
   testing: {
     client: 'sqlite3',
     connection: {
-      filename: './data'
+      filename: './data.timer3.db3'
     },
     useNullAsDefault: true,
     migrations: {
@@ -37,8 +34,6 @@ module.exports = {
       directory: './data/seeds',
     },
   },
-
-
 
   production: {
     client: 'pg',
