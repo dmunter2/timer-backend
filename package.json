@@ -27,7 +27,12 @@
   "repository": "https://github.com/dmunter2/timer-backend.git",
   "author": "dmunter2 <49967133+dmunter2@users.noreply.github.com>",
   "license": "MIT",
+  "engines": {
+    "node": "12.13.0",
+    "yarn": "1.16.0"
+  },
   "jest": {
     "testEnvironment": "node"
   }
 }
+

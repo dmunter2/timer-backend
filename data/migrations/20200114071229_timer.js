@@ -27,8 +27,7 @@ exports.up = function(knex) {
 
     .createTable('darkmode', darkmode => {
         darkmode.boolean('on').notNullable()
-
-
+        
         darkmode.string('users_id').unsigned().references('users.id')
 
     })
