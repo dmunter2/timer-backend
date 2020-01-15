@@ -5,11 +5,18 @@ exports.up = function(knex) {
     .createTable('users', user => {
         user.increments("id");
 
-        user.string('username', 128).notNullable().unique();
+        user
+            .string('username', 128)
+            .notNullable()
+            .unique();
 
-        user.string('password', 128).notNullable()
+        user
+            .string('password', 128)
+            .notNullable()
 
-        user.string('email', 128).unique()
+        user
+            .string('email', 128)
+            .unique()
     })
     .createTable('events', event => {
         event.increments('event_id')
