@@ -1,15 +1,14 @@
+
+
 // Update with your config settings.
 
 module.exports = {
 
   development: {
-    client: 'pg',
+    client: 'sqlite3',
     useNullAsDefault: true,
     connection: {
-      host: '127.0.0.1:50775',
-      user: 'postgres',
-      password: '48932',
-      database: 'timer'
+      filename: './database/timer.db3'
     },
     pool: {
       afterCreate: (conn, done) => {
@@ -17,38 +16,31 @@ module.exports = {
       },
     },
     migrations: {
-      directory: './data/migrations',
-    },
-    seeds: {
-      directory: './data/seeds',
-    },
+      directory: './database/migrations',
+    }
   },
 
   testing: {
     client: 'sqlite3',
     connection: {
-      filename: './data'
+      filename: './database/timer3.db3'
     },
     useNullAsDefault: true,
     migrations: {
-      directory: './data/migrations',
-    },
-    seeds: {
-      directory: './data/seeds',
-    },
+      directory: './database/migrations',
+    }
   },
-
 
 
   production: {
     client: 'pg',
     connection: process.env.HEROKU_POSTGRESQL_YELLOW_URL,
     migrations: {
-      tableName: './data/migrations'
+      tableName: './database/migrations'
     },
-    seeds: {
-      directory: "./data/seeds"
-    }
-  },
-
-};
+    pool: {
+      min: 2,
+      max: 10
+    },
+  }
+}
