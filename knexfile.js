@@ -8,7 +8,7 @@ module.exports = {
     client: 'sqlite3',
     useNullAsDefault: true,
     connection: {
-      filename: './timer.db3'
+      filename: './database/timer.db3'
     },
     pool: {
       afterCreate: (conn, done) => {

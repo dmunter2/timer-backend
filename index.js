@@ -8,6 +8,6 @@ const port = process.env.PORT || 5000
 
 
 server.listen(port, () => {
-    console.log(`--- Server is listening on Port ${port}`)
+    console.log(`--- Server is listening on Port ${port} ---`)
 })
 
