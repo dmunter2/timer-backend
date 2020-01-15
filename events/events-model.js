@@ -6,8 +6,8 @@ module.exports = {
      findById,
      update,
      add,
-     delete,
-     insert
+     insert,
+     remove
 }
 
 
@@ -29,13 +29,13 @@ async function add(event) {
 
 
 
-function insert(user) {
-    return db('exercises')
-        .insert(task)
-        .then(ids => {
-            return getById(ids[0]);
-        });
-}
+// function insert(event) {
+//     return db('events')
+//         .insert(task)
+//         .then(ids => {
+//             return getById(ids[0]);
+//         });
+// }
 
 
 
