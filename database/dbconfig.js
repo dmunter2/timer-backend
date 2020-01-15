@@ -10,12 +10,14 @@
 
 const knex = require('knex');
 
-const secrets = require('../config/secrets.js');
+const secrets = require('../config/secrets');
 
 
 
-const environment = secrets.environment || 'development';
+const environment = secrets.environment || 'production';
 const config = require('../knexfile.js')[environment];
+
+
 
 module.exports = knex(config);
 
