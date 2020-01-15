@@ -37,6 +37,9 @@ exports.up = function(knex) {
             .string('users_id')
             .unsigned()
             .references('user.id')
+            
+        event
+            .string('description')
 
 
     })

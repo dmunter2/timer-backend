@@ -6,15 +6,42 @@ module.exports = {
      findById,
      update,
      add,
-     delete
+     delete,
+     insert
 }
 
 
-function finbBy(){
-     return db('events').select('')
+function findBy(){
+     return db('events').select('year', 'month', 'day', 'description', 'events_id', 'users_id')
+}
+
+function findById(id){
+     return db('events').where({users_id: id}).first()
+}
+// .select('year', 'month', 'day', 'description', 'events_id', 'users_id')
+
+
+async function add(event) {
+     const [id] = await db('events').insert(event);
+
+     return findById(id);
 }
 
 
-function find() {
-     return db('exercises').select('exercise_name', 'muscle_group', 'weight_number', 'reps', 'date', 'sets', 'goals', 'user_id')
+
+function insert(user) {
+    return db('exercises')
+        .insert(task)
+        .then(ids => {
+            return getById(ids[0]);
+        });
+}
+
+
+
+
+function remove(event_id) {
+    return db('events')
+        .where('event_id', event_id)
+        .del()
 }
