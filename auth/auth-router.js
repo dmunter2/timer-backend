@@ -3,7 +3,7 @@ const userDb = require('../users/users-model')
 
 
 
-router.register('/register', (req,res) => {
+router.post('/register', (req,res) => {
     const body = req.body
     userDb.add(body)
         .then(user => {
