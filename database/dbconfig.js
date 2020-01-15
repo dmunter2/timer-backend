@@ -14,7 +14,7 @@ const secrets = require('../config/secrets');
 
 
 
-const environment = secrets.environment || 'production';
+const environment = secrets.environment || 'development';
 const config = require('../knexfile.js')[environment];
 
 
