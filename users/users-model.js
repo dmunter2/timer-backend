@@ -4,9 +4,7 @@ const db = require('../database/dbconfig');
 module.exports = {
     findBy,
     findById,
-    update,
     add,
-    insert,
     remove
 }
 

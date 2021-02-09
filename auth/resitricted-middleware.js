@@ -1,6 +1,6 @@
 const secret = require('../config/secrets')
 const bcrypt = require('bcryptjs')
-
+const jwt = require('jsonwebtoken')
 
 
 module.exports = (req, res, next) => {
